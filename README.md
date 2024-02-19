@@ -5,10 +5,10 @@ Benvenuti nella pagina web "Drive Passion" dedicata agli appassionati di automob
 La pagina web "Drive Passion" è un'applicazione web dedicata agli amanti delle automobili. Qui gli utenti possono trovare una vasta gamma di informazioni sulle macchine, inclusi dettagli come marca, modello, descrizione e prezzo.
 
 ## Funzionalità Principali
-Visualizzazione delle Macchine: Gli utenti possono visualizzare una lista di macchine disponibili con dettagli come marca, modello, descrizione e prezzo.
-Ricerca: È possibile effettuare ricerche per trovare macchine specifiche utilizzando la barra di ricerca.
-Inserimento Macchine: Gli utenti autenticati possono inserire nuove macchine nella piattaforma.
-Modifica e Eliminazione: Gli utenti autorizzati possono modificare o eliminare le informazioni sulle macchine.
+-Visualizzazione delle Macchine: Gli utenti possono visualizzare una lista di macchine disponibili con dettagli come marca, modello, descrizione e prezzo.
+-Ricerca: È possibile effettuare ricerche per trovare macchine specifiche utilizzando la barra di ricerca.
+-Inserimento Macchine: Gli utenti autenticati possono inserire nuove macchine nella piattaforma.
+-Modifica e Eliminazione: Gli utenti autorizzati possono modificare o eliminare le informazioni sulle macchine.
 
 ## Tecnologie Utilizzate
 HTML: Utilizzato per la struttura e il contenuto della pagina web.
