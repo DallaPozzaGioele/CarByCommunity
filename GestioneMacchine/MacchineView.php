@@ -4,6 +4,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Ricette</title>
+    <script>
+        window.addEventListener('scroll', function() {
+            var footer = document.getElementById('footer');
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > 100) { // Puoi modificare 100 con la posizione desiderata
+                footer.style.bottom = '0';
+            } else {
+                footer.style.bottom = '-100px';
+            }
+        });
+    </script>
+
 
     <style>
         .underline-center {
@@ -26,6 +39,36 @@
 
         .underline-center:hover::after {
             width: 100%;
+        }
+
+        .message {
+            margin-top: 20px;
+            margin-left: 9rem;
+            margin-right: 9rem;
+        }
+
+        body{
+            background: url("https://images.pexels.com/photos/2631489/pexels-photo-2631489.jpeg") no-repeat center;
+            background-size: cover;
+        }
+
+        .car-form {
+            border: 1px solid rgba(0, 0, 0, 0.5); /* Aggiungi un bordo con colore e spessore specificati */
+            background-color: rgba(255, 255, 255, 0.7); /* Sfondo opaco */
+            padding: 1rem; /* Aggiungi spazio intorno al contenuto */
+            margin-left: 17rem; /* Aggiungi margine sinistro per allineare con il resto del contenuto */
+            margin-right: 15rem; /* Aggiungi margine destro per allineare con il resto del contenuto */
+        }
+        .footer {
+            position: fixed;
+            bottom: -100px; /* Nascondi il footer inizialmente */
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            transition: bottom 0.3s ease; /* Aggiungi transizione per un effetto più fluido */
         }
     </style>
 
@@ -97,17 +140,18 @@
     </nav>
 </header>
 
-
-<div class="flex justify-between items-center">
-    <h1 class="text-2xl font-bold mb-4 ml-11 mt-3">Car by community</h1>
-    <p class="text-red-700 font-bold mr-11">
-        <?php if (isset($message)) : ?>
-            <?php echo $message; ?>
-        <?php elseif (isset($_GET['message'])) : ?>
-            <?php $message = htmlspecialchars($_GET['message']); ?>
-            <?php echo $message; ?>
-        <?php endif; ?>
-    </p>
+<div class="message">
+    <div class="flex justify-between items-center">
+        <h1 class="text-2xl text-white font-bold mb-4 ml-11 mt-3">Car by community</h1>
+        <p class="text-red-600 font-bold mr-11">
+            <?php if (isset($message)) : ?>
+                <?php echo $message; ?>
+            <?php elseif (isset($_GET['message'])) : ?>
+                <?php $message = htmlspecialchars($_GET['message']); ?>
+                <?php echo $message; ?>
+            <?php endif; ?>
+        </p>
+    </div>
 </div>
 <?php
 
@@ -125,20 +169,29 @@ if(empty($carsDb)) {
 else{
     foreach ($carsDb as $currentCar){
         $objectCar = new Macchina($currentCar['id'], $currentCar['username'] , $currentCar['brand'], $currentCar['model'], $currentCar['description'], $currentCar['price']);
-        echo '<form action="ModificaMacchina.php" method="post">';
+        echo '<form action="ModificaMacchina.php" method="post" class="car-form">';
         echo '<input type="hidden" name="carId" value="' . $objectCar->getId() . '">';
-        echo '<div class="border border-gray-300 p-4 mb-4 ml-11 mr-11">';
         echo '<button type="submit" name="delete" class="float-right text-red-500">X</button>';
         echo '<h2 class="text-xl font-bold mb-2">' . $objectCar->getMarca() . ' ' . $objectCar->getModello() . '</h2>';
         echo '<p>Macchina di ' . $objectCar->getUser() . '</p>';
         echo '<p><strong>Descrizione:</strong> ' . $objectCar->getDescrizione() . '</p>';
         echo '<p><strong>Prezzo:</strong> ' . $objectCar->getPrezzo() . '</p>';
         echo '<button type="submit" name="modifica" class="bg-blue-500 text-white px-4 py-2 mt-2">Modifica Macchina</button>';
-        echo '</div>';
         echo '</form>';
     }
 }
 ?>
+
+<footer class="footer" id="footer">
+    <div class="container mx-auto flex justify-between items-center">
+        <p class="text-gray-200">© 2024 Drive Passion</p>
+        <div class="flex space-x-4">
+            <a href="#" class="text-gray-200 hover:text-blue-600">Contatti</a>
+            <a href="#" class="text-gray-200 hover:text-blue-600">Termini di servizio</a>
+            <a href="#" class="text-gray-200 hover:text-blue-600">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
