@@ -1,0 +1,50 @@
+[
+    {
+        "nomeUtente": "gigi",
+        "id": "65b3983a8ac07",
+        "brand": "Rolls-Royce",
+        "model": "Silver Ghost",
+        "description": "Il modello fu originariamente prodotto negli stabilimenti di Manchester; nel luglio 1908 la produzione fu spostata a Derby. Dal 1921 al 1926 fu fabbricato invece a Springfield.\r\n\r\nNel 1906 la Rolls Royce prepar\u00f2 quattro telai per il salone di Olympia; due erano di vetture in produzione, la 20H.P. e la 30H.P., e due invece della 40\/50H.P. Questi ultimi erano ancora incompleti, e si dovr\u00e0 aspettare il marzo 1907 per il lancio definitivo[2].\r\n\r\nLa rivista britannica \u201cAutocar\u201d scrisse nel 1907 che la Rolls-Royce Silver Ghost era la migliore auto del mondo.",
+        "price": "35000000"
+    },
+    {
+        "nomeUtente": "gigi",
+        "id": "65b39972b1319",
+        "brand": "Hyundai",
+        "model": "IONIQ 6",
+        "description": "IONIQ 6 \u00e8 creata per portarti lontano: grazie alla tecnologia da 800V raggiungi l'80% di ricarica in 18 minuti. In pi\u00f9, puoi scegliere tra due dimensioni di batteria e tra trazione integrale o posteriore. L'innovativo sistema di batterie da 800 V ti offre la comodit\u00e0 della ricarica ultra-veloce, cos\u00ec da poterti godere al meglio qualsiasi viaggio.\r\n",
+        "price": "47500"
+    },
+    {
+        "nomeUtente": "Pozza136",
+        "id": "65b3a6d47d2ab",
+        "brand": "Jaguar",
+        "model": "F-Type Project 7",
+        "description": "Sotto la carrozzeria, il propulsore \u00e8 lo stesso che equipaggia la F\u2011Type standard, un 5 litri V8 sovralimentato con turbocompressore volumetrico che, dopo esser stato sottoposto alle cure della SVO, \u00e8 in grado di sviluppare 575 CV (contro i 495 CV della F\u2011Type V8 base) e 680 Nm di coppia massima, abbinato al cambio Quickshift a otto marce e alla trazione posteriore. Ci\u00f2 si traduce in uno scatto da 0 a 100 km\/h in 3.9 secondi e una velocit\u00e0 massima limitata elettronicamente a 300 km\/h. Per garantire un comportamento dinamico degno dell\u2019auto a cui vuole rendere omaggio, la Project 7 \u00e8 stata dotata di nuovi ammortizzatori con taratura specifica, nuove barre antirollio e angoli ruota rivisti, oltre ad un impianto frenante aggiornato. SVO ha inoltre sottoposto la Project 7 ad una cura dimagrante che le permette di risparmiare circa 80 chili, fermando la bilancia a 1585 Kg. Un lavoro notevole \u00e8 stato svolto anche sul comparto aerodinamico, facendo progredire notevolmente il comportamento dell\u2019auto soprattutto alle alte velocit\u00e0.",
+        "price": 180000
+    },
+    {
+        "nomeUtente": "Pozza136",
+        "id": "65c1d8a6d3764",
+        "brand": "Toyota",
+        "model": "Yaris",
+        "description": "Dimensioni e caratteristiche TOYOTA Yaris\r\nAnno modello: 1999-2006\r\nPosti: 5\r\nPorte: 3-5\r\nSerbatoio: 45l\r\nAltezzaAltezza: 148-172 cm\r\nLarghezzaLarghezza: 166-169 cm\r\nLunghezzaLunghezza: 361-388 cm",
+        "price": "5000"
+    },
+    {
+        "nomeUtente": "Pozza136",
+        "id": "65c1de06b2d1f",
+        "brand": "Toyota",
+        "model": "Yaris",
+        "description": "Anno modello: 1999-2006\r\nPosti: 5\r\nPorte: 3-5\r\nSerbatoio: 45l\r\nAltezzaAltezza: 148-172 cm\r\nLarghezzaLarghezza: 166-169 cm\r\nLunghezzaLunghezza: 361-388 cm",
+        "price": "5000"
+    },
+    {
+        "nomeUtente": "Pozza136",
+        "id": "65c1de8012d30",
+        "brand": "Rolls-Royce",
+        "model": "Silver Ghost",
+        "description": "La Silver Ghost, in origine chiamata 40\/50 hp, \u00e8 un'autovettura prodotta dalla Rolls-Royce dal 1907 al 1926. La denominazione si riferisce sia ad un esemplare preciso che ad una serie di automobili.",
+        "price": "35000000"
+    }
+]
