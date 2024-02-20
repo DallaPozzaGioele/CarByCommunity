@@ -50,6 +50,10 @@
         body{
             background: url("https://images.pexels.com/photos/2631489/pexels-photo-2631489.jpeg") no-repeat center;
             background-size: cover;
+            min-height: 150vh;
+            overflow-y: auto;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .car-form {
@@ -121,18 +125,20 @@
 </head>
 <body>
 <header class="bg-orange-500 p-4 flex justify-between items-center">
-    <h1 class="text-white text-6xl font-serif font-extrabold">DRIVE PASSION</h1>
+    <a href="MacchineView.php">
+        <h1 class="text-white text-6xl font-serif font-extrabold">DRIVE PASSION</h1>
+    </a>
 
     <nav class="flex w-90 items-center">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" class="container flex flex-row items-center w-90 mr-10 mt-4">
-            <input type="search" id="default-search" name="searchtxt" class="w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" required/>
+            <input type="search" id="default-search" name="searchtxt" class="w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search" value="<?php echo isset($testo) ? htmlspecialchars($testo) : '' ?>" required/>
             <button type="submit" name="search" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
         </form>
 
         <form action="<?php echo $_SERVER['PHP_SELF']?>" method="POST" class="flex items-center">
-            <button type="submit" name="add" class="text-white hover:text-white text-2xl font-bold underline-center mr-3 mt-2">INSERISCI</button>
+            <button type="submit" name="add" class="text-white hover:text-white text-2xl font-bold underline-center mr-10 mt-2">AGGIUNGI</button>
             <?php if ($logged) : ?>
-                <button type="submit" name="logout" class="text-white hover:text-white text-2xl font-bold underline-center mr-3 mt-2">LOGOUT</button>
+                <button type="submit" name="logout" class="text-white hover:text-white text-2xl font-bold underline-center mr-3 mt-2">DISCONNETTITI</button>
             <?php else : ?>
                 <button type="submit" name="login" class="text-white hover:text-white text-2xl font-bold underline-center mr-3 mt-2">ACCEDI</button>
             <?php endif; ?>
@@ -162,7 +168,7 @@ if(!$isSearch){
 
 
 if(empty($carsDb)) {
-    echo '<div class="border border-gray-300 p-4 mb-5 mx-auto max-w-xl text-center text-4xl">';
+    echo '<div class="border border-gray-300 p-4 mb-5 mx-auto max-w-xl text-center text-white text-4xl">';
     echo '<p>The current page is empty</p>';
     echo '</div>';
 }
@@ -171,12 +177,12 @@ else{
         $objectCar = new Macchina($currentCar['id'], $currentCar['username'] , $currentCar['brand'], $currentCar['model'], $currentCar['description'], $currentCar['price']);
         echo '<form action="ModificaMacchina.php" method="post" class="car-form">';
         echo '<input type="hidden" name="carId" value="' . $objectCar->getId() . '">';
-        echo '<button type="submit" name="delete" class="float-right text-red-500">X</button>';
+        echo '<button type="submit" name="delete" class="float-right font-bold text-xl text-red-800">X</button>';
         echo '<h2 class="text-xl font-bold mb-2">' . $objectCar->getMarca() . ' ' . $objectCar->getModello() . '</h2>';
         echo '<p>Macchina di ' . $objectCar->getUser() . '</p>';
         echo '<p><strong>Descrizione:</strong> ' . $objectCar->getDescrizione() . '</p>';
         echo '<p><strong>Prezzo:</strong> ' . $objectCar->getPrezzo() . '</p>';
-        echo '<button type="submit" name="modifica" class="bg-blue-500 text-white px-4 py-2 mt-2">Modifica Macchina</button>';
+        echo '<button type="submit" name="modifica" class="bg-blue-500 text-white px-4 py-2 mt-2">Modifica Caratteristiche</button>';
         echo '</form>';
     }
 }
@@ -184,9 +190,13 @@ else{
 
 <footer class="footer" id="footer">
     <div class="container mx-auto flex justify-between items-center">
-        <p class="text-gray-200">© 2024 Drive Passion</p>
+        <div>
+            <p class="text-gray-200">© 2024 Drive Passion</p>
+            <p class="text-gray-200">Autore: Gioele Dalla Pozza</p>
+            <p class="text-gray-200">Email: dpgioele@gmail.com</p>
+            <p class="text-gray-200">Telefono: 3703053842</p>
+        </div>
         <div class="flex space-x-4">
-            <a href="#" class="text-gray-200 hover:text-blue-600">Contatti</a>
             <a href="#" class="text-gray-200 hover:text-blue-600">Termini di servizio</a>
             <a href="#" class="text-gray-200 hover:text-blue-600">Privacy Policy</a>
         </div>

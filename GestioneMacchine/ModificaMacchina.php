@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modifica Ricetta</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var footer = document.getElementById('footer');
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition > 100) { // Puoi modificare 100 con la posizione desiderata
+                footer.style.bottom = '0';
+            } else {
+                footer.style.bottom = '-100px';
+            }
+        });
+    </script>
+
     <style>
         .underline-center {
             position: relative;
@@ -27,6 +41,29 @@
         .underline-center:hover::after {
             width: 100%;
         }
+
+        body{
+            background: url("https://images.pexels.com/photos/2631489/pexels-photo-2631489.jpeg") no-repeat center;
+            background-size: cover;
+            min-height: 150vh;
+            overflow-y: auto;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+
+        .footer {
+            position: fixed;
+            bottom: -100px; /* Nascondi il footer inizialmente */
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            transition: bottom 0.3s ease; /* Aggiungi transizione per un effetto più fluido */
+        }
+
     </style>
     <?php
     require_once "Macchina.php";
@@ -125,14 +162,16 @@
 </head>
 <body class="bg-gray-100">
 <header class="bg-orange-500 p-4 flex justify-between items-center">
-    <h1 class="text-white text-6xl font-serif font-extrabold">DRIVE PASSION</h1>
+    <a href="MacchineView.php">
+        <h1 class="text-white text-6xl font-serif font-extrabold">DRIVE PASSION</h1>
+    </a>
 
     <nav class="flex items-center space-x-4">
         <a href="MacchineView.php" class="text-white hover:text-white text-2xl font-bold underline-center mr-3">HOME</a>
     </nav>
 </header>
 <div class="max-w-md mx-auto mt-8 px-4">
-    <h1 class="text-3xl font-semibold mb-6">Modifica Ricetta</h1>
+    <h1 class="text-3xl text-white font-semibold mb-6">Modifica Vettura</h1>
     <?php
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $idMacchina = $_POST['carId'];
@@ -208,5 +247,21 @@
     }
     ?>
 </div>
+
+<footer class="footer" id="footer">
+    <div class="container mx-auto flex justify-between items-center">
+        <div>
+            <p class="text-gray-200">© 2024 Drive Passion</p>
+            <p class="text-gray-200">Autore: Gioele Dalla Pozza</p>
+            <p class="text-gray-200">Email: dpgioele@gmail.com</p>
+            <p class="text-gray-200">Telefono: 3703053842</p>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="text-gray-200 hover:text-blue-600">Termini di servizio</a>
+            <a href="#" class="text-gray-200 hover:text-blue-600">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
